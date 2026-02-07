@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calcolatrice - Brython</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython_stdlib.js"></script>
+
+    <style>
+        /* --- BODY --- */
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* --- CONTENITORE --- */
+        .container {
+            background: linear-gradient(145deg, #1a1a2e, #2c1a3a);
+            padding: 40px 60px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            text-align: center;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            width: 300px;
+        }
+
+        /* --- DISPLAY --- */
+        #display {
+            width: 100%;
+            padding: 15px;
+            font-size: 2em;
+            border-radius: 15px;
+            border: none;
+            text-align: right;
+            background: #2a2a40;
+            color: #fff;
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        /* --- GRID PULSANTI --- */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 15px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff6ec7, #8e2de2);
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- OPERATORS DIFFERENT COLOR --- */
+        .operator {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        .operator:hover {
+            background: linear-gradient(135deg, #ff6b81, #ff7a45);
+        }
+
+        /* --- MEDIA QUERY --- */
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+                padding: 30px;
+            }
+
+            button {
+                font-size: 1.2em;
+                padding: 12px;
+            }
+
+            #display {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body onload="brython()">
+
+<div class="container">
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator">/</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">*</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator">-</button>
+
+        <button>0</button>
+        <button>.</button>
+        <button class="operator">=</button>
+        <button class="operator">+</button>
+    </div>
+</div>
+
+<script type="text/python" src="index.py"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Click Counter - Brython</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython.min.js"></script>
+    <style>
+        /* --- BODY --- */
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            /* Gradient scuro viola/blu */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* --- CONTENITORE --- */
+        .container {
+            background: linear-gradient(145deg, #1a1a2e, #2c1a3a);
+            /* container viola scuro con sfumatura */
+            padding: 50px 80px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* --- TITOLI --- */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #ff6ec7, #8e2de2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            color: #e0c3fc;
+        }
+
+        /* --- PUNTEGGIO --- */
+        #score {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff6ec7, #8e2de2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        /* --- BUTTON --- */
+        button {
+            font-size: 1.5em;
+            padding: 15px 40px;
+            margin: 10px;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff6ec7, #8e2de2);
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+    <div class="container">
+        <h1>Click Counter</h1>
+        
+        <button id="decrease">-</button>
+        <button id="reset">Reset</button>
+        <button id="increase">+</button>
+        <h2>Score: <span id="score">0</span></h2>
+
+    </div>
+
+    <script type="text/python" src="index.py"></script>
+</body>
+
+</html>
